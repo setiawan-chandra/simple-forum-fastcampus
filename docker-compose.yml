@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: local-mysql-fast-campus
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=superSecretPassword
+      - MYSQL_DATABASE=fastcampus
+    volumes:
+      - /d/github/setiawan-chandra/FastCampus/db:/var/lib/mysql
