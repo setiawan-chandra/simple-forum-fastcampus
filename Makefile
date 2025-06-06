@@ -9,5 +9,7 @@ migrate-up:
 migrate-down:
 	@migrate -database $(MYSQL_URL) -path scripts/migrations down
 
+# Run syntax "make migrate-force VERSION=2"
+VERSION ?= 1
 migrate-force:
-	@migrate -database $(MYSQL_URL) -path scripts/migrations force 1
+	@migrate -database $(MYSQL_URL) -path scripts/migrations force $(VERSION)
